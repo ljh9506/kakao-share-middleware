@@ -21,6 +21,7 @@ app.get("/", function (req, res) {
   window.alert("zz");
 });
 app.get("/abc", function (req, res) {
+  // heroku logs --tail
   console.log(req.query, req.params);
   //   res.end(
   //     JSON.stringify(
