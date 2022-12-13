@@ -21,12 +21,13 @@ app.get("/", function (req, res) {
   window.alert("zz");
 });
 app.get("/abc", function (req, res) {
-  console.log(req);
-  res.end(
-    JSON.stringify(
-      `params = ${JSON.stringify(req.params)} query = ${JSON.stringify(
-        req.query
-      )} header = ${JSON.stringify(req.headers)}`
-    )
-  );
+  console.log(req.query, req.params);
+  //   res.end(
+  //     JSON.stringify(
+  //       `params = ${JSON.stringify(req.params)} query = ${JSON.stringify(
+  //         req.query
+  //       )} header = ${JSON.stringify(req.headers)}`
+  //     )
+  //   );
+  res.send(req.query);
 });
