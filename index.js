@@ -1,10 +1,20 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const PORT = process.env.PORT || 5050;
+const cors = require("cors");
 
-router.get("/", function (req, res, next) {
-  res.status(200).json({
-    message: "헤로쿠 테스트테스트테스트테스트테스트테스트",
-  });
+const app = express();
+
+//middlewares
+app.use(cors());
+
+app.listen(PORT, (error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("app listening on 5000 port");
+  }
 });
 
-module.exports = router;
+app.get("/", function (req, res) {
+  res.send("Hello World!");
+});
