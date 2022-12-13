@@ -14,7 +14,19 @@ app.listen(PORT, (error) => {
     console.log("app listening on 5000 port");
   }
 });
-
+console.log("zz");
 app.get("/", function (req, res) {
   res.send("Hello World!");
+  console.log(1);
+  window.alert("zz");
+});
+app.get("/abc", function (req, res) {
+  console.log(req);
+  res.end(
+    JSON.stringify(
+      `params = ${JSON.stringify(req.params)} query = ${JSON.stringify(
+        req.query
+      )} header = ${JSON.stringify(req.headers)}`
+    )
+  );
 });
