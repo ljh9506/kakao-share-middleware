@@ -1,13 +1,10 @@
-const express = require("express");
-const app = express();
+var express = require("express");
+var router = express.Router();
 
-app.get("/", function (req, res) {
-  res.send("Hello World!");
+router.get("/", function (req, res, next) {
+  res.status(200).json({
+    message: "헤로쿠 테스트테스트테스트테스트테스트테스트",
+  });
 });
 
-var server = app.listen(3030, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log("Server is working : PORT - ", port);
-});
+module.exports = router;
